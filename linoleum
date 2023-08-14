@@ -1,0 +1,26 @@
+#include <iostream>
+
+int main() {
+    int numRooms;
+    std::cout << "Введите количество комнат: ";
+    std::cin >> numRooms;
+
+    double totalArea = 0.0;
+    for (int i = 1; i <= numRooms; ++i) {
+        double length, width;
+        std::cout << "Введите длину и ширину комнаты " << i << " через пробел: ";
+        std::cin >> length >> width;
+        double roomArea = length * width;
+        totalArea += roomArea;
+    }
+
+    double rollWidth, rollLength;
+    std::cout << "Введите ширину и длину рулона линолеума через пробел: ";
+    std::cin >> rollWidth >> rollLength;
+
+    double rollsNeeded = totalArea / (rollWidth * rollLength);
+
+    std::cout << "Для покрытия " << totalArea << " кв. метров площади потребуется " << rollsNeeded << " рулонов линолеума." << std::endl;
+
+    return 0;
+}
